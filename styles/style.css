@@ -97,7 +97,7 @@ ol {
   display: flex;
   justify-content: center;
   gap: 30px;
-  max-height: 534px;
+  height: 534px;
   margin: 0 auto;
 }
 
