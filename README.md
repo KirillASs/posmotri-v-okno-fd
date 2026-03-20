@@ -14,4 +14,4 @@
 
 1. Клонируйте репозиторий:
 ```bash
-git clone https://github.com/ваш-аккаунт/posmotri-v-okno.git
+git clone https://github.com/KirillASs/posmotri-v-okno-fd
