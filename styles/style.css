@@ -9,13 +9,15 @@ html {
 }
 
 .page {
-  inline-size: 1200px;
-  block-size: 100%;
+  display: flex;
+  align-items: center;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  inline-size: 1200px;
+  block-size: 100%;
 }
 
 h1,
@@ -48,4 +50,278 @@ ol {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
+}
+
+/* !Клас для скрытия */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  clip-path: inset(100%);
+}
+
+/* !Общие стили кнопки */
+
+.button {
+  border: 1px solid #fff;
+  box-shadow: none;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: underline transparent;
+  background-color: transparent;
+  transition: background .2s ease-in, text-decoration .2s ease;
+  cursor: pointer;
+}
+
+.button:active {
+  text-decoration: none;
+  background-color: #545050;
+}
+
+.button:hover {
+  text-decoration-color: #fff;
+}
+
+.button:focus-visible {
+  outline: #fff 1px solid;
+  outline-offset: 2px;
+}
+
+/* !Стили главного блока */
+
+.content {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  max-height: 534px;
+  margin: 0 auto;
+}
+
+/* !Блок с просмотром и поиском видео */
+
+.result {
+  width: 711px;
+  margin-top: auto;
+}
+
+.result__video {
+  width: 100%;
+  height: 386px;
+  object-fit: cover;
+}
+
+/* !Стилизация формы */
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-top: 12px;
+}
+
+.search-form__fieldset {
+  border: none;
+}
+
+.search-form__fieldset:nth-child(2) {
+  margin-bottom: auto;
+}
+
+.search-form__fieldset-title {
+  margin-bottom: 5px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+  padding-left: 2px;
+}
+
+.search-form__textfield {
+  width: 225px;
+  border: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding: 3.5px 0;
+  color: #fff;
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+.search-form__textfield:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.search-form__textfield:hover {
+  outline: none;
+}
+
+.search-form__textfield:active {
+  outline: none;
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-left: 2px;
+}
+
+/* !Стилизация чекбоксов */
+
+.search-form__pseudo-checkbox {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+  transition: background .2s ease-in-out;
+  cursor: pointer;
+}
+
+input[type='checkbox']:checked + span {
+  background-color: #fff;
+}
+
+/* !убераем выделение назвваний чекбоксов что бы не дергался глаз */
+
+.search-form__label-text { 
+  text-decoration: underline transparent;
+  transition: text-decoration .2s ease;
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE/Edge */
+  user-select: none;
+}
+/* !Стилизуем состояния */
+.search-form__label:hover .search-form__label-text {
+  text-decoration-color: #fff;
+}
+
+/* !Работает только с has */
+
+.search-form__label:has(.search-form__checkbox:focus-visible) {
+  outline: #fff 1px solid;
+  outline-offset: 2px;
+}
+
+
+.search-form__submit-button {
+  padding: 6px 70.5px;
+}
+
+/* !Блок с колонкой видео и кнопой еще */
+
+.content__details {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 399px;
+}
+
+.title {
+  font-family: Oswald;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 94%;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content__list-container {
+  padding: 5px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex-grow: 1;
+  position: relative;
+}
+
+/* !Стилизация состояния ссылок на видео */
+
+.content__card-link {
+  color: #fff;
+  text-decoration: underline transparent;
+  transition: text-decoration 0.2s ease;
+}
+
+.content__card-link:hover {
+  text-decoration-color: #fff;
+}
+
+.content__video-card:active {
+  background: #545050;
+}
+
+.content__video-card:focus-visible {
+  outline: #fff 1px solid;  
+}
+
+.content__video-card {
+  display: flex;
+  gap: 9px;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+}
+
+/* !Работа с карточками */
+
+.content__video-card-title {
+  font-size: 30px;
+  text-transform: uppercase;
+  max-width: 190px;
+}
+
+.content__video-card-title, .content__video-card-description {
+  overflow: hidden;           /* Прячет выходящий текст */
+  text-overflow: ellipsis;    /* Добавляет ... в конце */
+  white-space: nowrap;        /* Запрещает перенос текста */
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+}
+
+.content__video-card-thumbnail {
+  max-width: 194px;
+  max-height: 103px;
+  object-fit: cover;
+}
+
+/* !Стили кнопки еще */
+
+.more-button {
+  width: 100%;
+  padding: 6px 0;
+}
+
+.result__video-container {
+  position: relative;
+}
+
+.preloader {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
 }
